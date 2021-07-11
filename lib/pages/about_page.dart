@@ -5,6 +5,7 @@ class AboutPage extends StatelessWidget {
   final double screenHeight;
 
   AboutPage({required this.screenWidth, required this.screenHeight});
+
   @override
   Widget build(BuildContext context) {
     return Container(
