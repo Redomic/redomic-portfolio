@@ -14,7 +14,7 @@ class AboutPage extends StatelessWidget {
     return Container(
       width: screenWidth,
       height: screenHeight,
-      decoration: BoxDecoration(color: Colors.red),
+      decoration: BoxDecoration(color: Colors.green),
     );
   }
 }

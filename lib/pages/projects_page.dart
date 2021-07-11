@@ -14,7 +14,7 @@ class ProjectsPage extends StatelessWidget {
     return Container(
       width: screenWidth,
       height: screenHeight,
-      decoration: BoxDecoration(color: Colors.yellow),
+      decoration: BoxDecoration(color: Colors.blue),
     );
   }
 }

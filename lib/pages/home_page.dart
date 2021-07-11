@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
 
-class SocialsPage extends StatelessWidget {
+class HomePage extends StatelessWidget {
   final double screenWidth;
   final double screenHeight;
 
-  SocialsPage({
-    required this.screenWidth,
-    required this.screenHeight,
-  });
+  HomePage({required this.screenWidth, required this.screenHeight});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: screenWidth,
       height: screenHeight,
-      decoration: BoxDecoration(color: Colors.green),
+      decoration: BoxDecoration(color: Colors.red),
     );
   }
 }

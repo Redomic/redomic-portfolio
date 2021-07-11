@@ -19,11 +19,17 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
       height: double.infinity,
       width: widget.navbarWidth,
       decoration: BoxDecoration(
-        color: Colors.black,
+        color: Colors.grey[900],
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          NavbarItem(
+            'Home',
+            0,
+            widget.navbarWidth,
+            widget.itemScrollController,
+          ),
           NavbarItem(
             'About',
             1,
@@ -33,12 +39,6 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
           NavbarItem(
             'Projects',
             2,
-            widget.navbarWidth,
-            widget.itemScrollController,
-          ),
-          NavbarItem(
-            'Socials',
-            3,
             widget.navbarWidth,
             widget.itemScrollController,
           ),
