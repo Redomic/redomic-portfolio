@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class NavbarItem extends StatelessWidget {
   final String itemText;
+  final int index;
   final double navbarWidth;
+  final ItemScrollController itemScrollController;
 
-  NavbarItem(this.itemText, this.navbarWidth);
+  NavbarItem(
+      this.itemText, this.index, this.navbarWidth, this.itemScrollController);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: navbarWidth,
-      width: navbarWidth,
-      child: Center(
-        child: Text(
-          itemText,
-          style: TextStyle(color: Colors.white),
+    return InkWell(
+      onTap: () {
+        itemScrollController.scrollTo(
+          index: index,
+          duration: Duration(milliseconds: 200),
+          curve: Curves.easeInOutCubic,
+        );
+      },
+      child: Container(
+        height: navbarWidth,
+        width: navbarWidth,
+        child: Center(
+          child: Text(
+            itemText,
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );

@@ -8,17 +8,20 @@ import 'about_page.dart';
 
 class MasterPage extends StatefulWidget {
   final double navbarWidth;
+  final ItemScrollController itemScrollController;
+  final ItemPositionsListener itemPositionsListener;
 
-  MasterPage(this.navbarWidth);
+  MasterPage({
+    required this.navbarWidth,
+    required this.itemScrollController,
+    required this.itemPositionsListener,
+  });
+
   @override
   _MasterPageState createState() => _MasterPageState();
 }
 
 class _MasterPageState extends State<MasterPage> {
-  final ItemScrollController itemScrollController = ItemScrollController();
-  final ItemPositionsListener itemPositionsListener =
-      ItemPositionsListener.create();
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
@@ -58,8 +61,8 @@ class _MasterPageState extends State<MasterPage> {
         physics: NeverScrollableScrollPhysics(),
         itemCount: sections.length,
         itemBuilder: (context, index) => sections[index].page,
-        itemScrollController: itemScrollController,
-        itemPositionsListener: itemPositionsListener,
+        itemScrollController: widget.itemScrollController,
+        itemPositionsListener: widget.itemPositionsListener,
       ),
     );
   }

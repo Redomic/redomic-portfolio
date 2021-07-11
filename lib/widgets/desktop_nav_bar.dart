@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import 'nav_bar_item.dart';
 
 class DesktopNavBar extends StatefulWidget {
   final double navbarWidth;
+  final ItemScrollController itemScrollController;
 
-  DesktopNavBar(this.navbarWidth);
+  DesktopNavBar(this.navbarWidth, this.itemScrollController);
   @override
   _DesktopNavBarState createState() => _DesktopNavBarState();
 }
@@ -22,9 +24,24 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          NavbarItem('About', widget.navbarWidth),
-          NavbarItem('Projects', widget.navbarWidth),
-          NavbarItem('Working on', widget.navbarWidth),
+          NavbarItem(
+            'About',
+            0,
+            widget.navbarWidth,
+            widget.itemScrollController,
+          ),
+          NavbarItem(
+            'Projects',
+            1,
+            widget.navbarWidth,
+            widget.itemScrollController,
+          ),
+          // NavbarItem(
+          //   'Working on',
+          //   2,
+          //   widget.navbarWidth,
+          //   widget.itemScrollController,
+          // ),
         ],
       ),
     );
