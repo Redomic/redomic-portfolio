@@ -6,7 +6,6 @@ import '../models/page_section.dart';
 import 'home_page.dart';
 import 'about_page.dart';
 import 'projects_page.dart';
-import 'home_page.dart';
 
 class MasterPage extends StatefulWidget {
   final double navbarWidth;

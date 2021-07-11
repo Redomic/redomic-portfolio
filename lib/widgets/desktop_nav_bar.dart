@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-import 'nav_bar_item.dart';
+import '../constants/user_color.dart';
+
+import 'desktop_nav_bar_item.dart';
 
 class DesktopNavBar extends StatefulWidget {
   final double navbarWidth;
@@ -19,24 +21,27 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
       height: double.infinity,
       width: widget.navbarWidth,
       decoration: BoxDecoration(
-        color: Colors.grey[900],
+        color: UserColors.navBarColor,
+        border: Border(
+          right: BorderSide(color: UserColors.navBarBorderColor, width: 2),
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          NavbarItem(
+          DesktopNavbarItem(
             'Home',
             0,
             widget.navbarWidth,
             widget.itemScrollController,
           ),
-          NavbarItem(
+          DesktopNavbarItem(
             'About',
             1,
             widget.navbarWidth,
             widget.itemScrollController,
           ),
-          NavbarItem(
+          DesktopNavbarItem(
             'Projects',
             2,
             widget.navbarWidth,

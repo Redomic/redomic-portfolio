@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UserColors {
-  final Color navBarColor = Color('2a2e35')
+  static const Color navBarColor = Color(0xff181818);
+  static const Color navBarBorderColor = Color(0xff212121);
+  static const Color backgroundColor = Color(0xff141414);
 }
