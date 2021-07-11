@@ -5,6 +5,8 @@ import '../models/page_section.dart';
 
 import 'starting_page.dart';
 import 'about_page.dart';
+import 'projects_page.dart';
+import 'socials_page.dart';
 
 class MasterPage extends StatefulWidget {
   final double navbarWidth;
@@ -43,16 +45,21 @@ class _MasterPageState extends State<MasterPage> {
           screenWidth: screenWidth,
         ),
       ),
+      PageSection(
+        title: 'Projects page',
+        page: ProjectsPage(
+          screenHeight: screenHeight,
+          screenWidth: screenWidth,
+        ),
+      ),
+      PageSection(
+        title: 'Socials page',
+        page: SocialsPage(
+          screenHeight: screenHeight,
+          screenWidth: screenWidth,
+        ),
+      ),
     ];
-
-    // return SingleChildScrollView(
-    //   physics: NeverScrollableScrollPhysics(),
-    //   child: Column(
-    //     children: [
-
-    //     ],
-    //   ),
-    // );
 
     return SizedBox(
       width: screenWidth,

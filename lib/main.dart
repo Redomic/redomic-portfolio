@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'pages/home_page.dart';
+import 'pages/device_selector_page.dart';
 
 void main() {
   runApp(MyApp());

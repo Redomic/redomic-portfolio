@@ -26,22 +26,22 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
         children: [
           NavbarItem(
             'About',
-            0,
+            1,
             widget.navbarWidth,
             widget.itemScrollController,
           ),
           NavbarItem(
             'Projects',
-            1,
+            2,
             widget.navbarWidth,
             widget.itemScrollController,
           ),
-          // NavbarItem(
-          //   'Working on',
-          //   2,
-          //   widget.navbarWidth,
-          //   widget.itemScrollController,
-          // ),
+          NavbarItem(
+            'Socials',
+            3,
+            widget.navbarWidth,
+            widget.itemScrollController,
+          ),
         ],
       ),
     );

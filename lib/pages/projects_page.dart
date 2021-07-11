@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class AboutPage extends StatelessWidget {
+class ProjectsPage extends StatelessWidget {
   final double screenWidth;
   final double screenHeight;
 
-  AboutPage({
+  ProjectsPage({
     required this.screenWidth,
     required this.screenHeight,
   });
@@ -14,7 +14,7 @@ class AboutPage extends StatelessWidget {
     return Container(
       width: screenWidth,
       height: screenHeight,
-      decoration: BoxDecoration(color: Colors.red),
+      decoration: BoxDecoration(color: Colors.yellow),
     );
   }
 }
