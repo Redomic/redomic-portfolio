@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../models/page_section.dart';
+
+import '../providers/page_controller.dart';
 
 import 'home_page.dart';
 import 'about_page.dart';
@@ -20,6 +23,9 @@ class MasterPage extends StatefulWidget {
 class _MasterPageState extends State<MasterPage> {
   @override
   Widget build(BuildContext context) {
+    final PageController pageController =
+        Provider.of<UserPageControllerProvider>(context).pageController;
+
     final mediaQuery = MediaQuery.of(context);
     final screenWidth = mediaQuery.size.width - widget.navbarWidth;
     final screenHeight = mediaQuery.size.height;
@@ -52,6 +58,7 @@ class _MasterPageState extends State<MasterPage> {
       width: screenWidth,
       height: screenHeight,
       child: PageView(
+        controller: pageController,
         allowImplicitScrolling: false,
         // physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,

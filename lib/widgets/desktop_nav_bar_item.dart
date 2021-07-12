@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/page_controller.dart';
 
 class DesktopNavbarItem extends StatelessWidget {
   final String itemText;
@@ -13,8 +16,17 @@ class DesktopNavbarItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageProvider = Provider.of<UserPageControllerProvider>(context);
+
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        pageProvider.pageController.animateToPage(
+          index,
+          duration: Duration(milliseconds: 200),
+          curve: Curves.decelerate,
+        );
+        pageProvider.changePageIndexTo(index);
+      },
       child: Container(
         height: navbarWidth,
         width: navbarWidth,
