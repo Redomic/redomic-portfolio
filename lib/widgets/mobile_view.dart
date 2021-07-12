@@ -12,9 +12,7 @@ class _MobileViewState extends State<MobileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MasterPage(
-        navbarWidth: navbarWidth,
-      ),
+      body: MasterPage(),
     );
   }
 }

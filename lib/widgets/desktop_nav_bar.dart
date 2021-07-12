@@ -1,67 +1,74 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../constants/user_colors.dart';
+import '../constants/user_config.dart';
+
+import '../providers/page_controller.dart';
 
 import 'desktop_nav_bar_item.dart';
 
 class DesktopNavbar extends StatefulWidget {
-  final double navbarWidth;
-
-  DesktopNavbar(
-    this.navbarWidth,
-  );
-
   @override
   _DesktopNavbarState createState() => _DesktopNavbarState();
 }
 
 class _DesktopNavbarState extends State<DesktopNavbar> {
+  final double navbarWidth = NavbarConfig.navbarWidth;
+  final double navbarHeight = NavbarConfig.navbarHeight;
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        // MAIN BAR
-        Container(
-          height: double.infinity,
-          width: widget.navbarWidth,
-          decoration: BoxDecoration(
-            color: UserColors.navBarColor,
-            border: Border(
-              right: BorderSide(color: UserColors.navBarBorderColor, width: 2),
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Stack(
+        children: [
+          Container(
+            height: navbarHeight,
+            width: navbarWidth,
+            decoration: BoxDecoration(
+              color: UserColors.navBarColor,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
             ),
           ),
-        ),
-
-        // LOGO BUTTON
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            DesktopNavbarLogoItem(widget.navbarWidth),
-          ],
-        ),
-
-        // PAGE BUTTONS
-        NavbarButtonsHolder(widget.navbarWidth),
-      ],
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(30),
+            ),
+            child: Container(
+              height: navbarWidth + 25,
+              width: navbarWidth,
+              color: UserColors.accentRedColor,
+            ),
+          ),
+          NavbarButtonsHolder(navbarWidth, navbarHeight),
+        ],
+      ),
     );
   }
 }
 
 class NavbarButtonsHolder extends StatelessWidget {
   final double navbarWidth;
+  final double navbarHeight;
 
   NavbarButtonsHolder(
     this.navbarWidth,
+    this.navbarHeight,
   );
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: double.infinity,
+      height: navbarHeight,
       width: navbarWidth,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          DesktopNavbarLogoItem(navbarWidth),
           DesktopNavbarButtonItem(
             itemText: 'Home',
             index: 0,

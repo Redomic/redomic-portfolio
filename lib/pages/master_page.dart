@@ -10,12 +10,6 @@ import 'about_page.dart';
 import 'projects_page.dart';
 
 class MasterPage extends StatefulWidget {
-  final double navbarWidth;
-
-  MasterPage({
-    required this.navbarWidth,
-  });
-
   @override
   _MasterPageState createState() => _MasterPageState();
 }
@@ -27,7 +21,7 @@ class _MasterPageState extends State<MasterPage> {
         Provider.of<UserPageControllerProvider>(context).pageController;
 
     final mediaQuery = MediaQuery.of(context);
-    final screenWidth = mediaQuery.size.width - widget.navbarWidth;
+    final screenWidth = mediaQuery.size.width;
     final screenHeight = mediaQuery.size.height;
 
     final sections = <PageSection>[

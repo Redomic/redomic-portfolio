@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../constants/user_colors.dart';
-
 import '../providers/page_controller.dart';
 
 class DesktopNavbarButtonItem extends StatelessWidget {
@@ -19,7 +17,6 @@ class DesktopNavbarButtonItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final pageProvider = Provider.of<UserPageControllerProvider>(context);
-    bool onIndex = pageProvider.onIndex(index);
 
     return InkWell(
       onTap: () {
@@ -29,23 +26,15 @@ class DesktopNavbarButtonItem extends StatelessWidget {
           curve: Curves.decelerate,
         );
         pageProvider.changePageIndexTo(index);
+        print(pageProvider.getCurrentPage);
       },
       child: Container(
-        decoration: BoxDecoration(
-          border: onIndex
-              ? Border(
-                  right: BorderSide(
-                    color: UserColors.accentRedColor,
-                    width: 4,
-                  ),
-                )
-              : null,
-        ),
         height: navbarWidth,
         width: navbarWidth,
         child: Center(
           child: Text(
             itemText,
+            textAlign: TextAlign.center,
             style: TextStyle(color: Colors.white),
           ),
         ),
@@ -66,10 +55,11 @@ class DesktopNavbarLogoItem extends StatelessWidget {
       child: Container(
         height: navbarWidth,
         width: navbarWidth,
-        decoration: BoxDecoration(
-          color: UserColors.accentRedColor,
-          border: Border(
-            right: BorderSide(color: UserColors.accentRedColor, width: 2),
+        child: Center(
+          child: Text(
+            'Placeholder text',
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white),
           ),
         ),
       ),

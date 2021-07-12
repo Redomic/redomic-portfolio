@@ -11,16 +11,11 @@ class DesktopView extends StatefulWidget {
 class _DesktopViewState extends State<DesktopView> {
   @override
   Widget build(BuildContext context) {
-    final navbarWidth = 100.0;
     return Scaffold(
-      body: Row(
+      body: Stack(
         children: [
-          DesktopNavbar(
-            navbarWidth,
-          ),
-          MasterPage(
-            navbarWidth: navbarWidth,
-          ),
+          MasterPage(),
+          DesktopNavbar(),
         ],
       ),
     );
