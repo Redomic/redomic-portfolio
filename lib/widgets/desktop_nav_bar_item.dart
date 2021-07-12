@@ -1,25 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 class DesktopNavbarItem extends StatelessWidget {
   final String itemText;
   final int index;
   final double navbarWidth;
-  final ItemScrollController itemScrollController;
 
   DesktopNavbarItem(
-      this.itemText, this.index, this.navbarWidth, this.itemScrollController);
+    this.itemText,
+    this.index,
+    this.navbarWidth,
+  );
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        itemScrollController.scrollTo(
-          index: index,
-          duration: Duration(milliseconds: 200),
-          curve: Curves.easeInOutCubic,
-        );
-      },
+      onTap: () {},
       child: Container(
         height: navbarWidth,
         width: navbarWidth,

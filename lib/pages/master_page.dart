@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../models/page_section.dart';
 
@@ -9,13 +8,9 @@ import 'projects_page.dart';
 
 class MasterPage extends StatefulWidget {
   final double navbarWidth;
-  final ItemScrollController itemScrollController;
-  final ItemPositionsListener itemPositionsListener;
 
   MasterPage({
     required this.navbarWidth,
-    required this.itemScrollController,
-    required this.itemPositionsListener,
   });
 
   @override
@@ -56,12 +51,15 @@ class _MasterPageState extends State<MasterPage> {
     return SizedBox(
       width: screenWidth,
       height: screenHeight,
-      child: ScrollablePositionedList.builder(
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: sections.length,
-        itemBuilder: (context, index) => sections[index].page,
-        itemScrollController: widget.itemScrollController,
-        itemPositionsListener: widget.itemPositionsListener,
+      child: PageView(
+        allowImplicitScrolling: false,
+        // physics: NeverScrollableScrollPhysics(),
+        scrollDirection: Axis.vertical,
+        children: [
+          sections[0].page,
+          sections[1].page,
+          sections[2].page,
+        ],
       ),
     );
   }
