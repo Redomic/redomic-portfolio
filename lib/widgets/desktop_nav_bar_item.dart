@@ -22,11 +22,10 @@ class DesktopNavbarButtonItem extends StatelessWidget {
       onTap: () {
         pageProvider.pageController.animateToPage(
           index,
-          duration: Duration(milliseconds: 200),
-          curve: Curves.decelerate,
+          duration: Duration(milliseconds: 400),
+          curve: Curves.easeInOutExpo,
         );
         pageProvider.changePageIndexTo(index);
-        print(pageProvider.getCurrentPage);
       },
       child: Container(
         height: navbarWidth,

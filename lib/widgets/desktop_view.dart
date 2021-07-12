@@ -13,9 +13,13 @@ class _DesktopViewState extends State<DesktopView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        alignment: Alignment.centerLeft,
         children: [
           MasterPage(),
-          DesktopNavbar(),
+          Positioned(
+            left: 10,
+            child: DesktopNavbar(),
+          ),
         ],
       ),
     );

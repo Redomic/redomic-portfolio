@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -23,20 +25,29 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
       alignment: Alignment.centerLeft,
       child: Stack(
         children: [
-          Container(
-            height: navbarHeight,
-            width: navbarWidth,
-            decoration: BoxDecoration(
-              color: UserColors.navBarColor,
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(30),
-                bottomRight: Radius.circular(30),
+          // NAVBAR BACKGROUND CONTAINER
+          ClipRRect(
+            borderRadius: BorderRadius.all(
+              Radius.circular(30),
+            ),
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+              child: Container(
+                height: navbarHeight,
+                width: navbarWidth,
+                decoration: BoxDecoration(
+                  color: UserColors.navBarColor.withOpacity(0.5),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(30),
+                  ),
+                ),
               ),
             ),
           ),
           ClipRRect(
             borderRadius: BorderRadius.only(
               topRight: Radius.circular(30),
+              topLeft: Radius.circular(30),
             ),
             child: Container(
               height: navbarWidth + 25,
@@ -44,6 +55,26 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
               color: UserColors.accentRedColor,
             ),
           ),
+          // BUTTON SLIDER
+          Consumer<UserPageControllerProvider>(
+            builder: (context, provider, child) {
+              final double getPosition = provider.pageSliderPositionLogic();
+              return AnimatedPositioned(
+                top: getPosition,
+                left: navbarWidth - 5,
+                curve: Curves.easeInOutExpo,
+                duration: Duration(milliseconds: 400),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: UserColors.accentRedColor,
+                  ),
+                  height: navbarWidth,
+                  width: 5,
+                ),
+              );
+            },
+          ),
+          // NAVBAR BUTTONS HOLDER
           NavbarButtonsHolder(navbarWidth, navbarHeight),
         ],
       ),
