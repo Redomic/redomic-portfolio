@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-import '../constants/user_color.dart';
+import '../constants/user_colors.dart';
 
 import 'desktop_nav_bar_item.dart';
 
@@ -23,7 +23,7 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
       decoration: BoxDecoration(
         color: UserColors.navBarColor,
         border: Border(
-          right: BorderSide(color: UserColors.navBarBorderColor, width: 2),
+          right: BorderSide(color: UserColors.navBarBorderColor, width: 3),
         ),
       ),
       child: Column(

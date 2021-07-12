@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/user_color.dart';
+import '../constants/user_colors.dart';
 
 class HomePage extends StatelessWidget {
   final double screenWidth;
