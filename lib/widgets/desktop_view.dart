@@ -15,7 +15,7 @@ class _DesktopViewState extends State<DesktopView> {
     return Scaffold(
       body: Row(
         children: [
-          DesktopNavBar(
+          DesktopNavbar(
             navbarWidth,
           ),
           MasterPage(

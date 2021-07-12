@@ -14,4 +14,12 @@ class UserPageControllerProvider with ChangeNotifier {
   int get getCurrentPage {
     return currentPage;
   }
+
+  bool onIndex(int index) {
+    if (getCurrentPage == index) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

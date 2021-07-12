@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/user_colors.dart';
+
 class ProjectsPage extends StatelessWidget {
   final double screenWidth;
   final double screenHeight;
@@ -14,7 +16,7 @@ class ProjectsPage extends StatelessWidget {
     return Container(
       width: screenWidth,
       height: screenHeight,
-      decoration: BoxDecoration(color: Colors.blue),
+      decoration: BoxDecoration(color: UserColors.backgroundColor),
     );
   }
 }
