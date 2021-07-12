@@ -40,6 +40,10 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
                   borderRadius: BorderRadius.all(
                     Radius.circular(30),
                   ),
+                  border: Border.all(
+                    width: 0.5,
+                    color: Colors.white.withOpacity(0.1),
+                  ),
                 ),
               ),
             ),

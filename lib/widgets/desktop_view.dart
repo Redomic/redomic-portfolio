@@ -17,7 +17,7 @@ class _DesktopViewState extends State<DesktopView> {
         children: [
           MasterPage(),
           Positioned(
-            left: 10,
+            left: 15,
             child: DesktopNavbar(),
           ),
         ],
