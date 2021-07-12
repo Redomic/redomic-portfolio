@@ -60,7 +60,7 @@ class _MasterPageState extends State<MasterPage> {
       child: PageView(
         controller: pageController,
         allowImplicitScrolling: false,
-        // physics: NeverScrollableScrollPhysics(),
+        physics: NeverScrollableScrollPhysics(),
         scrollDirection: Axis.vertical,
         children: [
           sections[0].page,
