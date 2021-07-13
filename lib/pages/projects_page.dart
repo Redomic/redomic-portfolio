@@ -16,10 +16,14 @@ class ProjectsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.transparent,
       body: Center(
-        child: Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(color: Colors.red),
+        child: Text(
+          'UNDER WORK',
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 100,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+          ),
         ),
       ),
     );
