@@ -51,8 +51,16 @@ class DesktopNavbarLogoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final pageProvider = Provider.of<UserPageControllerProvider>(context);
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        pageProvider.pageController.animateToPage(
+          0,
+          duration: Duration(milliseconds: 400),
+          curve: Curves.easeInOutExpo,
+        );
+        pageProvider.changePageIndexTo(0);
+      },
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       child: Container(

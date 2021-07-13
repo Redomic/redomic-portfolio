@@ -73,7 +73,7 @@ class NavbarContainerHolder extends StatelessWidget {
               Radius.circular(30),
             ),
             border: Border.all(
-              width: 0.5,
+              width: 2,
               color: Colors.white.withOpacity(0.1),
             ),
           ),
@@ -112,7 +112,7 @@ class NavbarTopButtonHolder extends StatelessWidget {
           child: Container(
             height: navbarWidth - 35,
             width: navbarWidth - 35,
-            child: Image.asset('userlogo.png'),
+            child: Image.asset('userlogo_lowres.png'),
           ),
         ),
       ],
