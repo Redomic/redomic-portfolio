@@ -112,7 +112,7 @@ class NavbarTopButtonHolder extends StatelessWidget {
           child: Container(
             height: navbarWidth - 35,
             width: navbarWidth - 35,
-            child: Image.asset('userlogo_lowres.png'),
+            child: Image.asset('images/userlogo_lowres.png'),
           ),
         ),
       ],

@@ -77,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           height: 70,
                           width: 70,
-                          child: Image.asset('userlogo_lowres.png'),
+                          child: Image.asset('images/userlogo_lowres.png'),
                         ),
                       ),
                       FadeInUp(
