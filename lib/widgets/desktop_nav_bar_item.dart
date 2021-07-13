@@ -27,6 +27,8 @@ class DesktopNavbarButtonItem extends StatelessWidget {
         );
         pageProvider.changePageIndexTo(index);
       },
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: Container(
         height: navbarWidth,
         width: navbarWidth,
@@ -51,16 +53,16 @@ class DesktopNavbarLogoItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
+      splashColor: Colors.transparent,
+      highlightColor: Colors.transparent,
       child: Container(
         height: navbarWidth,
         width: navbarWidth,
-        child: Center(
-          child: Text(
-            'Placeholder text',
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
+        // child: Center(
+        //   child: Image.asset(
+        //     'userlogo.png',
+        //   ),
+        // ),
       ),
     );
   }

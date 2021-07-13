@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/user_colors.dart';
+
 import 'desktop_nav_bar.dart';
 import '../pages/master_page.dart';
 
@@ -12,6 +14,7 @@ class _DesktopViewState extends State<DesktopView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: UserColors.backgroundColor,
       body: Stack(
         alignment: Alignment.centerLeft,
         children: [

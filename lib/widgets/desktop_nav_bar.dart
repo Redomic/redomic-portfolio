@@ -21,67 +21,132 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Stack(
-        children: [
-          // NAVBAR BACKGROUND CONTAINER
-          ClipRRect(
+    return Stack(
+      children: [
+        // NAVBAR BACKGROUND CONTAINER
+        NavbarContainerHolder(
+          navbarHeight: navbarHeight,
+          navbarWidth: navbarWidth,
+        ),
+        // TOP BUTTON HOLDER
+        NavbarTopButtonHolder(
+          navbarWidth: navbarWidth,
+        ),
+        // BUTTON SLIDER
+        NavbarSliderHolder(
+          navbarWidth: navbarWidth,
+        ),
+        // NAVBAR BUTTONS HOLDER
+        NavbarButtonsHolder(
+          navbarWidth,
+          navbarHeight,
+        ),
+      ],
+    );
+  }
+}
+
+class NavbarContainerHolder extends StatelessWidget {
+  const NavbarContainerHolder({
+    Key? key,
+    required this.navbarHeight,
+    required this.navbarWidth,
+  }) : super(key: key);
+
+  final double navbarHeight;
+  final double navbarWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.all(
+        Radius.circular(30),
+      ),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+        child: Container(
+          height: navbarHeight,
+          width: navbarWidth,
+          decoration: BoxDecoration(
+            color: UserColors.navBarColor.withOpacity(0.5),
             borderRadius: BorderRadius.all(
               Radius.circular(30),
             ),
-            child: BackdropFilter(
-              filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: Container(
-                height: navbarHeight,
-                width: navbarWidth,
-                decoration: BoxDecoration(
-                  color: UserColors.navBarColor.withOpacity(0.5),
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(30),
-                  ),
-                  border: Border.all(
-                    width: 0.5,
-                    color: Colors.white.withOpacity(0.1),
-                  ),
-                ),
-              ),
+            border: Border.all(
+              width: 0.5,
+              color: Colors.white.withOpacity(0.1),
             ),
           ),
-          ClipRRect(
-            borderRadius: BorderRadius.only(
-              topRight: Radius.circular(30),
-              topLeft: Radius.circular(30),
-            ),
-            child: Container(
-              height: navbarWidth + 25,
-              width: navbarWidth,
+        ),
+      ),
+    );
+  }
+}
+
+class NavbarTopButtonHolder extends StatelessWidget {
+  const NavbarTopButtonHolder({
+    Key? key,
+    required this.navbarWidth,
+  }) : super(key: key);
+
+  final double navbarWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.only(
+            topRight: Radius.circular(30),
+            topLeft: Radius.circular(30),
+          ),
+          child: Container(
+            height: navbarWidth + 15,
+            width: navbarWidth,
+            color: UserColors.accentRedColor,
+          ),
+        ),
+        Positioned(
+          top: 30,
+          left: 18,
+          child: Container(
+            height: navbarWidth - 35,
+            width: navbarWidth - 35,
+            child: Image.asset('userlogo.png'),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class NavbarSliderHolder extends StatelessWidget {
+  const NavbarSliderHolder({
+    Key? key,
+    required this.navbarWidth,
+  }) : super(key: key);
+
+  final double navbarWidth;
+
+  @override
+  Widget build(BuildContext context) {
+    return Consumer<UserPageControllerProvider>(
+      builder: (context, provider, child) {
+        final double getPosition = provider.pageSliderPositionLogic();
+        return AnimatedPositioned(
+          top: getPosition,
+          left: navbarWidth - 5,
+          curve: Curves.easeInOutExpo,
+          duration: Duration(milliseconds: 400),
+          child: Container(
+            decoration: BoxDecoration(
               color: UserColors.accentRedColor,
             ),
+            height: navbarWidth,
+            width: 5,
           ),
-          // BUTTON SLIDER
-          Consumer<UserPageControllerProvider>(
-            builder: (context, provider, child) {
-              final double getPosition = provider.pageSliderPositionLogic();
-              return AnimatedPositioned(
-                top: getPosition,
-                left: navbarWidth - 5,
-                curve: Curves.easeInOutExpo,
-                duration: Duration(milliseconds: 400),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: UserColors.accentRedColor,
-                  ),
-                  height: navbarWidth,
-                  width: 5,
-                ),
-              );
-            },
-          ),
-          // NAVBAR BUTTONS HOLDER
-          NavbarButtonsHolder(navbarWidth, navbarHeight),
-        ],
-      ),
+        );
+      },
     );
   }
 }

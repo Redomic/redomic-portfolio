@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/user_colors.dart';
+
 class HomePage extends StatelessWidget {
   final double screenWidth;
   final double screenHeight;
@@ -9,6 +11,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: Center(
         child: Container(
           width: 100,

@@ -29,11 +29,11 @@ class UserPageControllerProvider with ChangeNotifier {
     final int barPosition = getCurrentPage;
     final double navbarWidth = NavbarConfig.navbarWidth;
     if (barPosition == 0) {
-      return navbarWidth + 25;
+      return navbarWidth + 15;
     } else if (barPosition == 1) {
-      return (navbarWidth * 2) + 25;
+      return (navbarWidth * 2) + 15;
     } else {
-      return (navbarWidth * 3) + 25;
+      return (navbarWidth * 3) + 15;
     }
   }
 }
