@@ -36,7 +36,12 @@ class DesktopNavbarButtonItem extends StatelessWidget {
           child: Text(
             itemText,
             textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+              fontSize: 16,
+              color: Colors.white,
+            ),
           ),
         ),
       ),
