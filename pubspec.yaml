@@ -24,8 +24,10 @@ dependencies:
   flutter:
     sdk: flutter
   animate_do: ^2.0.0
+  intl: ^0.17.0
   provider: ^5.0.0
   responsive_framework: ^0.1.4
+  url_launcher: ^6.0.9
 
 dev_dependencies:
   flutter_test:
@@ -58,8 +60,15 @@ flutter:
         - asset: fonts/TitilliumWeb-Regular.ttf
         - asset: fonts/TitilliumWeb-ExtraLight.ttf
           weight: 200
+        - asset: fonts/TitilliumWeb-Bold.ttf
+          weight: 700
         - asset: fonts/TitilliumWeb-Black.ttf
           weight: 900
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Regular.ttf
+        - asset: fonts/Montserrat-Bold.ttf
+          weight: 700
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

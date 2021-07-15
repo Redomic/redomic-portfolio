@@ -5,4 +5,7 @@ class UserColors {
   static const Color navBarBorderColor = Color(0xff212121);
   static const Color backgroundColor = Color(0xff141414);
   static const Color accentRedColor = Color(0xffbc2020);
+  static const Color flutterColor = Color(0xff51bff0);
+  static const Color pythonColor = Color(0xfff7c31d);
+  static const Color jsColor = Color(0xff007c00);
 }
