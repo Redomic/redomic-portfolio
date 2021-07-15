@@ -135,7 +135,7 @@ class NavbarSliderHolder extends StatelessWidget {
         final double getPosition = provider.pageSliderPositionLogic();
         return AnimatedPositioned(
           top: getPosition,
-          left: navbarWidth - 5,
+          left: navbarWidth - 6,
           curve: Curves.easeInOutExpo,
           duration: Duration(milliseconds: 400),
           child: Container(
@@ -143,7 +143,7 @@ class NavbarSliderHolder extends StatelessWidget {
               color: UserColors.accentRedColor,
             ),
             height: navbarWidth,
-            width: 5,
+            width: 6,
           ),
         );
       },

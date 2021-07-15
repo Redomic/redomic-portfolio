@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -39,140 +41,157 @@ class IntroductionTextHolder extends StatelessWidget {
     int age =
         DateTime.now().year - DateFormat('dd-MM-yyyy').parse('06-06-2003').year;
 
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          RichText(
-            text: TextSpan(
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Montserrat',
-                fontSize: 40,
-              ),
-              children: [
-                TextSpan(text: "Hey, I'm "),
-                TextSpan(
-                  text: 'Jones',
-                  style: TextStyle(
-                    color: UserColors.accentRedColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(text: '.')
-              ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(30),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+        child: Container(
+          decoration: BoxDecoration(
+            color: UserColors.navBarColor.withOpacity(0.5),
+            borderRadius: BorderRadius.circular(30),
+            border: Border.all(
+              color: Colors.white.withOpacity(0.1),
+              width: 2,
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
-          RichText(
-            text: TextSpan(
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Montserrat',
-                fontSize: 30,
-              ),
-              children: [
-                TextSpan(text: "A "),
-                TextSpan(
-                  text: '$age ',
-                  style: TextStyle(
-                    color: UserColors.accentRedColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(text: 'year-old developer')
-              ],
-            ),
-          ),
-          RichText(
-            text: TextSpan(
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Montserrat',
-                fontSize: 30,
-              ),
-              children: [
-                TextSpan(text: "who uses "),
-                TextSpan(
-                  text: 'Python',
-                  style: TextStyle(
-                    color: UserColors.pythonColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(text: ', '),
-                TextSpan(
-                  text: 'Flutter',
-                  style: TextStyle(
-                    color: UserColors.flutterColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(text: ', '),
-                TextSpan(
-                  text: 'Javascript',
-                  style: TextStyle(
-                    color: UserColors.jsColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(text: ', '),
-                TextSpan(text: 'and '),
-                TextSpan(
-                  text: 'Others',
-                  style: TextStyle(
-                    color: UserColors.accentRedColor,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 40,
-          ),
-          RichText(
-            text: TextSpan(
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'Montserrat',
-                fontSize: 30,
-              ),
-              children: [
-                TextSpan(text: "Check me out on:"),
-              ],
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Row(
+          padding: EdgeInsets.all(30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              DesktopAboutButton(
-                imageUrl: 'images/github.png',
-                logoText: 'GITHUB',
-                logoLink: 'https://github.com/redomic',
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Montserrat',
+                    fontSize: 40,
+                  ),
+                  children: [
+                    TextSpan(text: "Hey, I'm "),
+                    TextSpan(
+                      text: 'Jones',
+                      style: TextStyle(
+                        color: UserColors.accentRedColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextSpan(text: '.')
+                  ],
+                ),
               ),
-              DesktopAboutButton(
-                imageUrl: 'images/linkedin.png',
-                logoText: 'LINKEDIN',
-                logoLink: 'https://www.linkedin.com/in/jones-david-6b98381ba/',
+              SizedBox(
+                height: 10,
               ),
-              DesktopAboutButton(
-                imageUrl: 'images/twitch.png',
-                logoText: 'TWITCH',
-                logoLink: 'https://www.twitch.tv/redomic',
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Montserrat',
+                    fontSize: 30,
+                  ),
+                  children: [
+                    TextSpan(text: "A "),
+                    TextSpan(
+                      text: '$age ',
+                      style: TextStyle(
+                        color: UserColors.accentRedColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextSpan(text: 'year-old developer')
+                  ],
+                ),
               ),
-              DesktopAboutButton(
-                imageUrl: 'images/instagram.png',
-                logoText: 'INSTAGRAM',
-                logoLink: 'https://www.instagram.com/redomicna/',
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Montserrat',
+                    fontSize: 30,
+                  ),
+                  children: [
+                    TextSpan(text: "who uses "),
+                    TextSpan(
+                      text: 'Python',
+                      style: TextStyle(
+                        color: UserColors.pythonColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextSpan(text: ', '),
+                    TextSpan(
+                      text: 'Flutter',
+                      style: TextStyle(
+                        color: UserColors.flutterColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextSpan(text: ', '),
+                    TextSpan(
+                      text: 'Javascript',
+                      style: TextStyle(
+                        color: UserColors.jsColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    TextSpan(text: ', '),
+                    TextSpan(text: 'and '),
+                    TextSpan(
+                      text: 'Others',
+                      style: TextStyle(
+                        color: UserColors.accentRedColor,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
               ),
+              SizedBox(
+                height: 40,
+              ),
+              RichText(
+                text: TextSpan(
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontFamily: 'Montserrat',
+                    fontSize: 30,
+                  ),
+                  children: [
+                    TextSpan(text: "Check me out on:"),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  DesktopAboutButton(
+                    imageUrl: 'images/github.png',
+                    logoText: 'GITHUB',
+                    logoLink: 'https://github.com/redomic',
+                  ),
+                  DesktopAboutButton(
+                    imageUrl: 'images/linkedin.png',
+                    logoText: 'LINKEDIN',
+                    logoLink:
+                        'https://www.linkedin.com/in/jones-david-6b98381ba/',
+                  ),
+                  DesktopAboutButton(
+                    imageUrl: 'images/twitch.png',
+                    logoText: 'TWITCH',
+                    logoLink: 'https://www.twitch.tv/redomic',
+                  ),
+                  DesktopAboutButton(
+                    imageUrl: 'images/instagram.png',
+                    logoText: 'INSTAGRAM',
+                    logoLink: 'https://www.instagram.com/redomicna/',
+                  ),
+                ],
+              )
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
