@@ -14,7 +14,7 @@ class _DesktopViewState extends State<DesktopView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: UserColors.backgroundColor,
+      backgroundColor: Colors.transparent,
       body: Stack(
         alignment: Alignment.centerLeft,
         children: [

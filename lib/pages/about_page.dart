@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -166,26 +167,38 @@ class IntroductionTextHolder extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  DesktopAboutButton(
-                    imageUrl: 'images/github.png',
-                    logoText: 'GITHUB',
-                    logoLink: 'https://github.com/redomic',
+                  FadeInUp(
+                    delay: Duration(milliseconds: 400),
+                    child: DesktopAboutButton(
+                      imageUrl: 'images/github.png',
+                      logoText: 'GITHUB',
+                      logoLink: 'https://github.com/redomic',
+                    ),
                   ),
-                  DesktopAboutButton(
-                    imageUrl: 'images/linkedin.png',
-                    logoText: 'LINKEDIN',
-                    logoLink:
-                        'https://www.linkedin.com/in/jones-david-6b98381ba/',
+                  FadeInUp(
+                    delay: Duration(milliseconds: 700),
+                    child: DesktopAboutButton(
+                      imageUrl: 'images/linkedin.png',
+                      logoText: 'LINKEDIN',
+                      logoLink:
+                          'https://www.linkedin.com/in/jones-david-6b98381ba/',
+                    ),
                   ),
-                  DesktopAboutButton(
-                    imageUrl: 'images/twitch.png',
-                    logoText: 'TWITCH',
-                    logoLink: 'https://www.twitch.tv/redomic',
+                  FadeInUp(
+                    delay: Duration(milliseconds: 1000),
+                    child: DesktopAboutButton(
+                      imageUrl: 'images/twitch.png',
+                      logoText: 'TWITCH',
+                      logoLink: 'https://www.twitch.tv/redomic',
+                    ),
                   ),
-                  DesktopAboutButton(
-                    imageUrl: 'images/instagram.png',
-                    logoText: 'INSTAGRAM',
-                    logoLink: 'https://www.instagram.com/redomicna/',
+                  FadeInUp(
+                    delay: Duration(milliseconds: 1300),
+                    child: DesktopAboutButton(
+                      imageUrl: 'images/instagram.png',
+                      logoText: 'INSTAGRAM',
+                      logoLink: 'https://www.instagram.com/redomicna/',
+                    ),
                   ),
                 ],
               )
