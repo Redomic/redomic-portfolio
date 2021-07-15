@@ -153,18 +153,22 @@ class IntroductionTextHolder extends StatelessWidget {
               DesktopAboutButton(
                 imageUrl: 'images/github.png',
                 logoText: 'GITHUB',
+                logoLink: 'https://github.com/redomic',
               ),
               DesktopAboutButton(
                 imageUrl: 'images/linkedin.png',
                 logoText: 'LINKEDIN',
+                logoLink: 'https://www.linkedin.com/in/jones-david-6b98381ba/',
               ),
               DesktopAboutButton(
                 imageUrl: 'images/twitch.png',
                 logoText: 'TWITCH',
+                logoLink: 'https://www.twitch.tv/redomic',
               ),
               DesktopAboutButton(
                 imageUrl: 'images/instagram.png',
                 logoText: 'INSTAGRAM',
+                logoLink: 'https://www.instagram.com/redomicna/',
               ),
             ],
           )

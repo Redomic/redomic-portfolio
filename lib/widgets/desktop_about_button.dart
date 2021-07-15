@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../constants/user_colors.dart';
 
 class DesktopAboutButton extends StatelessWidget {
   final String imageUrl;
   final String logoText;
-  // final String logoLink;
+  final String logoLink;
 
   DesktopAboutButton({
     required this.imageUrl,
     required this.logoText,
-    // required this.logoLink,
+    required this.logoLink,
   });
 
   @override
@@ -18,7 +19,9 @@ class DesktopAboutButton extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          launch(logoLink);
+        },
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         child: Container(
