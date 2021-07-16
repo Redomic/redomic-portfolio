@@ -15,6 +15,7 @@ class LanguageUsage {
 }
 
 class UserProject {
+  final int index;
   final String title;
   final String imageUrl;
   final String description;
@@ -24,6 +25,7 @@ class UserProject {
   final bool isComplete;
 
   UserProject({
+    required this.index,
     required this.title,
     required this.imageUrl,
     required this.description,
@@ -38,8 +40,9 @@ class UserProjects {
   static List<UserProject> projects = [
     // PORTFOLIO SITE - 0
     UserProject(
-      title: 'Portfolio site',
-      imageUrl: 'https://i.imgur.com/LJKVEGN.png',
+      index: 0,
+      title: 'Portfolio',
+      imageUrl: 'https://i.imgur.com/1Pi4BF7.png',
       description: '''
           This portfolio was made completely in Flutter
           except for the background which was made with Vanta.js
@@ -53,6 +56,7 @@ class UserProjects {
     ),
     // CHAT APP - 1
     UserProject(
+      index: 1,
       title: 'Chat App',
       imageUrl: 'https://i.imgur.com/7qKqqLf.png',
       description: '''
@@ -66,6 +70,7 @@ class UserProjects {
     ),
     // GREAT PLACES APP - 2
     UserProject(
+      index: 2,
       title: 'Great Places App',
       imageUrl: 'https://i.imgur.com/7qKqqLf.png',
       description: '''
@@ -79,6 +84,7 @@ class UserProjects {
     ),
     // SHOP APP - 3
     UserProject(
+      index: 3,
       title: 'Shop App',
       imageUrl: 'https://i.imgur.com/7qKqqLf.png',
       description: '''
@@ -92,6 +98,7 @@ class UserProjects {
     ),
     // Delimeals App - 4
     UserProject(
+      index: 4,
       title: 'Delimeals App',
       imageUrl: 'https://i.imgur.com/7qKqqLf.png',
       description: '''
@@ -105,6 +112,7 @@ class UserProjects {
     ),
     // Personal Expenses App - 5
     UserProject(
+      index: 5,
       title: 'Expenses App',
       imageUrl: 'https://i.imgur.com/7qKqqLf.png',
       description: '''
@@ -118,6 +126,7 @@ class UserProjects {
     ),
     // Sitescrapper - 6
     UserProject(
+      index: 6,
       title: 'Sitescraper',
       imageUrl: 'https://i.imgur.com/0iPQJh7.png',
       description: '''
