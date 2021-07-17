@@ -136,7 +136,7 @@ class _ProjectButtonHolderState extends State<ProjectButtonHolder> {
                 child: Container(
                   height: containerHeight,
                   width: containerHeight,
-                  child: Image.network(
+                  child: Image.asset(
                     widget.imageUrl,
                     fit: BoxFit.cover,
                   ),
