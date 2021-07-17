@@ -240,7 +240,7 @@ class InfoContainerHolder extends StatelessWidget {
                         child: Container(
                           height: 250,
                           width: 250,
-                          child: Image.network(
+                          child: Image.asset(
                             project.imageUrl,
                             fit: BoxFit.cover,
                           ),
