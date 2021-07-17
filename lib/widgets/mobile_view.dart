@@ -12,6 +12,7 @@ class _MobileViewState extends State<MobileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
       body: MasterPage(),
     );
   }
