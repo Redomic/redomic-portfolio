@@ -10,6 +10,11 @@ import 'about_page.dart';
 import 'projects_page.dart';
 
 class MasterPage extends StatefulWidget {
+  final double screenWidth;
+  final double screenHeight;
+
+  MasterPage(this.screenHeight, this.screenWidth);
+
   @override
   _MasterPageState createState() => _MasterPageState();
 }
@@ -20,42 +25,40 @@ class _MasterPageState extends State<MasterPage> {
     final PageController pageController =
         Provider.of<UserPageControllerProvider>(context).pageController;
 
-    final mediaQuery = MediaQuery.of(context);
-    final screenWidth = mediaQuery.size.width;
-    final screenHeight = mediaQuery.size.height;
-
     final sections = <PageSection>[
       PageSection(
         title: 'Home page',
         page: HomePage(
-          screenHeight: screenHeight,
-          screenWidth: screenWidth,
+          screenHeight: widget.screenHeight,
+          screenWidth: widget.screenWidth,
         ),
       ),
       PageSection(
         title: 'About page',
         page: AboutPage(
-          screenHeight: screenHeight,
-          screenWidth: screenWidth,
+          screenHeight: widget.screenHeight,
+          screenWidth: widget.screenWidth,
         ),
       ),
       PageSection(
         title: 'Projects page',
         page: ProjectsPage(
-          screenHeight: screenHeight,
-          screenWidth: screenWidth,
+          screenHeight: widget.screenHeight,
+          screenWidth: widget.screenWidth,
         ),
       ),
     ];
 
     return SizedBox(
-      width: screenWidth,
-      height: screenHeight,
+      width: widget.screenWidth,
+      height: widget.screenHeight,
       child: PageView(
         controller: pageController,
         allowImplicitScrolling: false,
-        physics: NeverScrollableScrollPhysics(),
-        scrollDirection: Axis.vertical,
+        physics:
+            widget.screenWidth > 1000 ? NeverScrollableScrollPhysics() : null,
+        scrollDirection:
+            widget.screenWidth > 1000 ? Axis.vertical : Axis.horizontal,
         children: [
           sections[0].page,
           sections[1].page,

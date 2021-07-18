@@ -36,4 +36,16 @@ class UserPageControllerProvider with ChangeNotifier {
       return (navbarWidth * 3) + 15;
     }
   }
+
+  double mobilePageSliderPositionLogic() {
+    final int barPosition = getCurrentPage;
+    final double navbarHeight = MobileNavbarConfig.navbarHeight;
+    if (barPosition == 0) {
+      return navbarHeight + 15;
+    } else if (barPosition == 1) {
+      return (navbarHeight * 2) + 15;
+    } else {
+      return (navbarHeight * 3) + 15;
+    }
+  }
 }

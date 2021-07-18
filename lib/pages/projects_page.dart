@@ -45,6 +45,7 @@ class _ProjectsPageState extends State<ProjectsPage> {
       body: Center(
         child: Container(
           width: 1000,
+          height: 700,
           child: Stack(
             alignment: Alignment.center,
             children: [
