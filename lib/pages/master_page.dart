@@ -24,6 +24,7 @@ class _MasterPageState extends State<MasterPage> {
   Widget build(BuildContext context) {
     final PageController pageController =
         Provider.of<UserPageControllerProvider>(context).pageController;
+    final pageProvider = Provider.of<UserPageControllerProvider>(context);
 
     final sections = <PageSection>[
       PageSection(
@@ -59,6 +60,9 @@ class _MasterPageState extends State<MasterPage> {
             widget.screenWidth > 1000 ? NeverScrollableScrollPhysics() : null,
         scrollDirection:
             widget.screenWidth > 1000 ? Axis.vertical : Axis.horizontal,
+        onPageChanged: (index) {
+          pageProvider.changePageIndexTo(index);
+        },
         children: [
           sections[0].page,
           sections[1].page,
