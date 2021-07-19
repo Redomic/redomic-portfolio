@@ -90,7 +90,7 @@ class IntroductionTextHolder extends StatelessWidget {
                     fontSize: 30,
                   ),
                   children: [
-                    TextSpan(text: "A "),
+                    TextSpan(text: age == 18 || age == 80 ? 'An ' : 'A '),
                     TextSpan(
                       text: '$age ',
                       style: TextStyle(
@@ -110,7 +110,7 @@ class IntroductionTextHolder extends StatelessWidget {
                     fontSize: 30,
                   ),
                   children: [
-                    TextSpan(text: "who uses "),
+                    TextSpan(text: 'who uses '),
                     TextSpan(
                       text: 'Python',
                       style: TextStyle(
@@ -157,7 +157,7 @@ class IntroductionTextHolder extends StatelessWidget {
                     fontSize: 30,
                   ),
                   children: [
-                    TextSpan(text: "Check me out on:"),
+                    TextSpan(text: 'Check me out on:'),
                   ],
                 ),
               ),
