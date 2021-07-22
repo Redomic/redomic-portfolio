@@ -69,7 +69,7 @@ class MyApp extends StatelessWidget {
           ],
           background: Container(color: Colors.transparent),
         ),
-        title: 'Portfolio',
+        title: 'Redomic',
         home: ScreenView(),
       ),
     );
