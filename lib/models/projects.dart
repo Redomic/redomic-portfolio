@@ -130,5 +130,18 @@ class UserProjects {
       ],
       isComplete: true,
     ),
+    // Locaro
+    UserProject(
+      index: 7,
+      title: 'Locaro',
+      imageUrl: 'images/locarologo.png',
+      description:
+          'My Startup in very early stages',
+      repoLink: 'https://github.com/Redomic/',
+      languagesUsed: [
+        LanguageUsage('JS', UserColors.flutterColor, 100),
+      ],
+      isComplete: false,
+    ),
   ];
 }
